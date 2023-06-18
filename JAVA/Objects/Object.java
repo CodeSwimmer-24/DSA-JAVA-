@@ -34,6 +34,8 @@ public class Object {
         //     System.out.println(arr[i].name);
         // }
 
+        // For each loop
+
         for(Students n : arr){
             System.out.println(n.name);
         }
