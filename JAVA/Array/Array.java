@@ -31,4 +31,8 @@ public class Array {
             System.out.println();
         }
     }
+
+    public static char[] toString(int[] arr) {
+        return null;
+    }
 } 
