@@ -43,7 +43,7 @@ class Arry {
 
 public class Delete {
     public static void main(String[] args) {
-        Arry a = new Arry();
+        Arry a = new Arry(); 
         a.insert(8);
 
         int[] result = a.getArray();
