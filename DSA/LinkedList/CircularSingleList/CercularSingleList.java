@@ -1,55 +1,50 @@
-package DSA.LinkedList.SingleListList;
+package DSA.LinkedList.CircularSingleList;
 
-// Creating head and tail properties
-
-public class SingleListList {
+public class CercularSingleList {
     public Node head;
     public Node tail;
     public int size;
 
-    public Node createSingleLinkedList(int nodeValue) {
+    public Node createCSLL(int nodevalue) {
         head = new Node();
         Node node = new Node();
-        node.next = null;
-        node.value = nodeValue;
+        node.value = nodevalue;
+        node.next = node;
         head = node;
         tail = node;
         size = 1;
         return head;
     }
 
-    // Inserting node in SingleListList
+    // Insertion of a node into a circular single list
 
-    public void insertingNewNode(int nodeValue, int location) {
+    public void insertion(int nodeValue, int location) {
         Node node = new Node();
         node.value = nodeValue;
         if (head == null) {
-            createSingleLinkedList(nodeValue);
-            return;
+            createCSLL(nodeValue);
         } else if (location == 0) {
             node.next = head;
             head = node;
+            tail.next = node;
         } else if (location >= size) {
-            node.next = null;
             tail.next = node;
             tail = node;
+            tail.next = head;
         } else {
             Node tempNode = head;
-            int index = 0;
-            while (index < location - 1) {
+            for (int i = 0; i < location - 1; i++) {
                 tempNode = tempNode.next;
-                index++;
             }
-            Node nextNode = tempNode.next;
+            node.next = tempNode.next;
             tempNode.next = node;
-            node.next = nextNode;
         }
         size++;
     }
 
-    // Traversal of single list
+    // Traversal methods
 
-    public void traversalSingleList() {
+    public void traversal() {
         Node tempNode = head;
         for (int i = 0; i < size; i++) {
             System.out.print(tempNode.value);
@@ -58,63 +53,64 @@ public class SingleListList {
             }
             tempNode = tempNode.next;
         }
-
+        System.out.println("\n");
     }
+    // Searching methods for Circular linked lists
 
-    // Searching the value in the list
-    public void searching(int value) {
+    public void search(int value) {
         Node tempNode = head;
         for (int i = 0; i < size; i++) {
             if (tempNode.value == value) {
-                System.out.println("Value is located at location " + i);
+                System.out.print("Value is located at " + i);
                 return;
             }
             tempNode = tempNode.next;
         }
-        System.out.println("\n");
-        System.out.println("Node not found");
-
+        System.out.print("Not found");
     }
 
-    // Deleting the node from first node, middle, last node.
-
-    public void deleteOfNode(int location) {
+    public void delete(int location) {
         if (head == null) {
-            System.out.println("Node is empty"); //
+            System.out.println("Empty node");
+            return;
         } else if (location == 0) {
             head = head.next;
+            tail.next = head;
             size--;
             if (size == 0) {
+                head = null;
                 tail = null;
+                head.next = null;
             }
         } else if (location >= size) {
             Node tempNode = head;
-            for (int i = 0; i < size - 1; i++) {
+            for( int i = 0; i < size -1 ; i++) {
                 tempNode = tempNode.next;
             }
-            if (tempNode == head) {
-                tail = head = null;
-                size--;
+            if(tempNode == head){
+                head.next = null;
+                head = null;
+                // size =  null;
+                size --;
                 return;
             }
-            tempNode.next = null;
+            tempNode.next = head;
             tail = tempNode;
             size--;
         } else {
             Node tempNode = head;
-            for (int i = 0; i < location - 1; i++) {
+            for( int i = 0; i < location -1 ; i++) {
                 tempNode = tempNode.next;
             }
             tempNode.next = tempNode.next.next;
-            size--;
         }
     }
 
-    // Delete entire linked list
-    
-     public void deleteAllLists() {
-            head = null;
-            tail = null;
-            System.out.println("Success Delete All");
-     }
+     // Delete all items from circular list 
+
+    public void deleteAll(){
+       head = null;
+       tail = null;
+       System.out.println("Successfully deleted all items");
+    }
 }
