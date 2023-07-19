@@ -12,6 +12,11 @@ public class Main {
     public static void main(String[] args){
         SingleListList list = new SingleListList();
         list.createSingleLinkedList(5);
-        System.out.println(list.head.value);
-    } 
+        System.out.println(list.head.value); 
+        list.insertingNewNode(6,1);
+        System.out.println(list.head.next.value);
+        list.insertingNewNode(7,3);
+        System.out.println(list.head.next.next.value);
+    }
 }
+
