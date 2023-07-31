@@ -18,7 +18,7 @@ public class Main {
         csll.traversal();
         csll.search(6);
         csll.delete(2);
-         csll.traversal();
-         csll.deleteAll();
+        csll.traversal();
+        csll.deleteAll();
     }
 }

@@ -84,14 +84,14 @@ public class CercularSingleList {
             }
         } else if (location >= size) {
             Node tempNode = head;
-            for( int i = 0; i < size -1 ; i++) {
+            for (int i = 0; i < size - 1; i++) {
                 tempNode = tempNode.next;
             }
-            if(tempNode == head){
+            if (tempNode == head) {
                 head.next = null;
                 head = null;
-                // size =  null;
-                size --;
+                // size = null;
+                size--;
                 return;
             }
             tempNode.next = head;
@@ -99,18 +99,18 @@ public class CercularSingleList {
             size--;
         } else {
             Node tempNode = head;
-            for( int i = 0; i < location -1 ; i++) {
+            for (int i = 0; i < location - 1; i++) {
                 tempNode = tempNode.next;
             }
             tempNode.next = tempNode.next.next;
         }
     }
 
-     // Delete all items from circular list 
+    // Delete all items from circular list
 
-    public void deleteAll(){
-       head = null;
-       tail = null;
-       System.out.println("Successfully deleted all items");
+    public void deleteAll() {
+        head = null;
+        tail = null;
+        System.out.println("Successfully deleted all items");
     }
 }

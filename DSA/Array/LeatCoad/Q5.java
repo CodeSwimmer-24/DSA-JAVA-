@@ -6,7 +6,7 @@
 
 // int newArray[] = null;
 //     public void repeat(int[] arr) {
-//         int temp[] = new int[arr.length];
+//         // int temp[] = new int[arr.length];
 //         for(int i = 0; i < arr.length; i++){
 //             for(int j = i+1; j< arr.length; j++){
 //                 if(arr[i] == arr[j]){
@@ -17,8 +17,8 @@
 //         for(int i = 0; i < arr.length; i++){
 //             if(arr[i] != -1){
 //                 System.out.println(arr[i]);
-//                 temp[i] = arr[i];
-//                 System.out.println(Arrays.toString(temp));
+//                 // temp[i] = ;
+//                 System.out.println(Arrays.toString(arr[i]));
 //             }
 //         }
 //     }
