@@ -1,4 +1,4 @@
-package DSA.Array.TwoDimentionArray;
+package TwoDimentionArray;
 
 import java.util.Arrays;
 

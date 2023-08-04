@@ -1,4 +1,4 @@
-package DSA.Array;
+
 
 class SingleDimensionArray {
 
